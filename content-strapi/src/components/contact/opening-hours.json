@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_contact_opening_hours",
+  "info": {
+    "displayName": "Opening Hours"
+  },
+  "options": {},
+  "attributes": {
+    "open": {
+      "type": "time",
+      "required": true
+    },
+    "close": {
+      "type": "time",
+      "required": true
+    },
+    "day": {
+      "type": "enumeration",
+      "enum": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "required": true
+    }
+  }
+}

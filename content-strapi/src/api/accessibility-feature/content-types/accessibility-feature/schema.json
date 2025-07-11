@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accessibility_features",
+  "info": {
+    "singularName": "accessibility-feature",
+    "pluralName": "accessibility-features",
+    "displayName": "Accessibility Feature",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "description": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

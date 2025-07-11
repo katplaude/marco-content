@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "companions",
+  "info": {
+    "singularName": "companion",
+    "pluralName": "companions",
+    "displayName": "Companion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "comp_status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Approved",
+        "Rejected"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "first_name": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "last_name": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

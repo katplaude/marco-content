@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "disability_cards",
+  "info": {
+    "singularName": "disability-card",
+    "pluralName": "disability-cards",
+    "displayName": "Disability Card",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "file": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "card_status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Approved",
+        "Rejected"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "issuing_card": {
+      "type": "string",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "expiry": {
+      "type": "date",
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
