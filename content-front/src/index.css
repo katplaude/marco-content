@@ -1,0 +1,360 @@
+/* src/index.css */
+
+/* Google Fonts - Import a modern sans-serif font like Inter or Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+/* Or Poppins: @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
+
+
+:root {
+  /* Blue Color Palette */
+  --color-primary: #1a73e8; /* Google Blue, a vibrant primary */
+  --color-primary-dark: #0f4a9b; /* Darker blue for hover/active states */
+  --color-primary-light: #e0f2f7; /* Very light blue for backgrounds/accents */
+  --color-accent: #4285f4; /* A slightly different blue for accents */
+  --color-text-dark: #202124; /* Dark gray for main text */
+  --color-text-light: #5f6368; /* Lighter gray for secondary text */
+  --color-background-light: #f8f9fa; /* Light background */
+  --color-white: #ffffff;
+  --color-border: #dadce0; /* Light border color */
+  --color-error: #ea4335; /* Red for errors */
+  --color-success: #34a853; /* Green for success */
+
+  /* Font Family */
+  --font-family-base: 'Inter', sans-serif;
+  /* --font-family-base: 'Poppins', sans-serif; */
+
+  /* Spacing */
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-background-light);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-primary-dark);
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+/* --- Global Button Styles --- */
+button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  min-width: 120px; /* Consistent button width */
+}
+
+button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background-color: var(--color-border);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --- Global Input Styles --- */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: var(--spacing-sm);
+  margin-top: 5px;
+  margin-bottom: var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.2); /* Soft blue shadow on focus */
+  outline: none;
+}
+
+/* --- Utility Classes for messages --- */
+.message {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+.message.error {
+  background-color: rgba(234, 67, 53, 0.1); /* Light red background */
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+}
+
+.message.success {
+  background-color: rgba(52, 168, 83, 0.1); /* Light green background */
+  color: var(--color-success);
+  border: 1px solid var(--color-success);
+}
+
+/* --- Card/Container Styles --- */
+.card {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* --- Form Layouts --- */
+.form-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: var(--color-text-light);
+}
+
+/* For radio buttons */
+.radio-group label {
+  display: inline-block;
+  margin-right: var(--spacing-md);
+  font-weight: normal;
+  color: var(--color-text-dark);
+}
+
+.radio-group input[type="radio"] {
+  width: auto; /* Override 100% width */
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+.app-header {
+  background-color: var(--color-primary);
+  padding: var(--spacing-md) var(--spacing-lg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--color-white);
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Limit content width */
+  margin: 0 auto;
+}
+
+.nav-left, .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--color-white);
+  text-decoration: none;
+  margin-right: var(--spacing-md);
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.welcome-message {
+  font-weight: 500;
+  margin-right: var(--spacing-md);
+  color: var(--color-white);
+}
+
+.logout-button {
+  background-color: var(--color-accent); /* Use accent for logout button */
+  color: var(--color-white);
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+  min-width: auto; /* Override global button min-width for smaller nav buttons */
+}
+
+.logout-button:hover {
+  background-color: #357ae8; /* Slightly darker accent */
+}
+
+.locale-button {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.7); /* Lighter white for non-active */
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 6px 10px;
+  margin-left: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  min-width: auto;
+}
+
+.locale-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-white);
+}
+
+.locale-button.active {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.app-main-content {
+  max-width: 800px; /* Max width for content area */
+  margin: var(--spacing-lg) auto; /* Center content with margin */
+  padding: var(--spacing-lg);
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* --- Profile Icon on Event Page --- */
+.events-page-container {
+  /* Removed position: relative as icon is fixed to viewport */
+  /* Also removed padding-top and padding-right as icon floats above content */
+}
+
+.profile-icon-link {
+  position: fixed; /* CHANGED: Fixed position to viewport */
+  top: 20px; /* Adjusted spacing */
+  right: 20px; /* Adjusted spacing */
+  text-decoration: none;
+  z-index: 100;
+}
+
+.profile-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.profile-icon:hover {
+  background-color: var(--color-primary-dark);
+  transform: scale(1.05);
+}
+
+/* --- Event List Layout (Grid) --- */
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.event-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.event-card {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.event-info {
+  padding: var(--spacing-md);
+  flex-grow: 1;
+}
+
+.event-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-primary-dark);
+}
+
+.event-info p {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.event-description {
+  font-size: 0.85rem;
+  color: var(--color-text-dark);
+  margin-top: var(--spacing-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.button.secondary-button {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  /* Use the global button padding */
+  padding: var(--spacing-sm) var(--spacing-md);
+  /* Override min-width if you want it to be naturally sized */
+  min-width: auto;
+}
+
+.button.secondary-button:hover {
+  background-color: var(--color-primary-light); /* Light background on hover */
+  color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
